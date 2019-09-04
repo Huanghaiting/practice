@@ -10,6 +10,8 @@
     <fields-demo></fields-demo>
     <div>自定义指令</div>
     <v-name></v-name>
+    <div>mixins混入的使用</div>
+    <mixin-demo></mixin-demo>
   </div>
 </template>
 
@@ -100,13 +102,15 @@
 import FlyTable from '@/components/Render.vue'
 import FieldsDemo from '@/components/filters.vue'
 import VName from '@/components/v-name.vue'
+import MixinDemo from '@/components/mixin.vue'
 export default {
   name: 'home',
   components: {
     // HelloWorld,
     FlyTable,
     'fields-demo': FieldsDemo,
-    'v-name': VName
+    'v-name': VName,
+    MixinDemo
   },
   data () {
     return {
