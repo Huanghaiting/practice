@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
 // import HelloWorld from '@/components/HelloWorld.vue'
 // import Vue from 'vue'
 // Vue.component('fly-table', {
@@ -103,6 +104,7 @@ import FlyTable from '@/components/Render.vue'
 import FieldsDemo from '@/components/filters.vue'
 import VName from '@/components/v-name.vue'
 import MixinDemo from '@/components/mixin.vue'
+// import ActiveCom from '@/components/DynamicComponent.vue'
 export default {
   name: 'home',
   components: {
@@ -111,6 +113,7 @@ export default {
     'fields-demo': FieldsDemo,
     'v-name': VName,
     MixinDemo
+    // ActiveCom
   },
   data () {
     return {
@@ -154,6 +157,7 @@ export default {
       ]
     }
   }
+
 }
 </script>
 

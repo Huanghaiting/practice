@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-// import Render from './views/Render'
+import DynamicComponent from './components/DynamicComponent'
 
 Vue.use(Router)
 
@@ -10,6 +10,10 @@ export default new Router({
     path: '/',
     name: 'home',
     component: Home
+  }, {
+    path: '/DynamicComponent',
+    name: 'DynamicComponent',
+    component: DynamicComponent
   }, {
     path: '/about',
     name: 'about',
