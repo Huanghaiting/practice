@@ -12,8 +12,9 @@
       <ul>
         <li v-for="todo in todos"
             :key="todo.id">
+          <!-- 给插槽绑定一个属性，属性名叫todoItem ,值是todo-->
           <slot name="four"
-                :todos="todo">
+                :todoItem="todo">
           </slot>
         </li>
       </ul>

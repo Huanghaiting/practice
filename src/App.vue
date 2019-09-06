@@ -2,7 +2,20 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <span @click="add">
+        <!-- 动态路由 -->
+        <!-- <router-link :to="'/about/'+num">About</router-link> -->
+        <!-- 嵌套路由 -->
+        <router-link to="/about">About</router-link>
+        <ul>
+          <li>
+            <router-link to="/about/author">About-author</router-link>
+          </li>
+          <li>
+            <router-link to="/about/email">About-email</router-link>
+          </li>
+        </ul>
+      </span>
     </div>
     <router-view />
   </div>
@@ -11,6 +24,12 @@
 export default {
   data () {
     return {
+      num: 0
+    }
+  },
+  methods: {
+    add () {
+      this.num++
     }
   }
 }

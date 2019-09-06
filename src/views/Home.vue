@@ -117,6 +117,7 @@ export default {
   },
   data () {
     return {
+      newRouter: null,
       fields: [
         {
           label: '名称',
@@ -156,6 +157,14 @@ export default {
         }
       ]
     }
+  },
+  watch: {
+    newRouter (value) {
+      console.log(value)
+    }
+  },
+  mounted () {
+    this.newRouter = this.$route.path
   }
 
 }

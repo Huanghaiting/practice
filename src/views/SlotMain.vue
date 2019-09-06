@@ -13,10 +13,10 @@
     <com :todos="todos">
       <!--定义一个获取循环行信息的使用参数slotProps-->
       <!-- 只要出现多个插槽，请始终为所有的插槽使用完整的基于 <template> 的语法 -->
-      <template v-slot:four="slotDemo">
+      <template v-slot:four="slotProps">
         <!--定义一个获取循环行信息的使用参数todos是我们在子组件定义的插槽返回信息的数据-->
-        <span v-if="slotDemo.todos.isComplete">✓</span>
-        <span>{{slotDemo.todos.text}}</span>
+        <span v-if="slotProps.todoItem.isComplete">✓</span>
+        <span>{{slotProps.todoItem.text}}</span>
       </template>
     </com>
   </div>
