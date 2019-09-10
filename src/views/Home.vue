@@ -12,6 +12,13 @@
     <v-name></v-name>
     <div>mixins混入的使用</div>
     <mixin-demo></mixin-demo>
+    <div>vuex状态管理</div>
+    <p>{{ count }}</p>
+    <p>
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
+    </p>
+    <p>{{tenTimesCount}}</p>
   </div>
 </template>
 
@@ -99,7 +106,7 @@
 
 // })
 // @ is an alias to /src
-
+import { mapGetters } from 'vuex'
 import FlyTable from '@/components/Render.vue'
 import FieldsDemo from '@/components/filters.vue'
 import VName from '@/components/v-name.vue'
@@ -161,6 +168,26 @@ export default {
   watch: {
     newRouter (value) {
       console.log(value)
+    }
+  },
+  // 由于 store 中的状态是响应式的，在组件中调用 store 中的状态简单到仅需要在计算属性中返回即可。触发变化也仅仅是在组件的 methods 中提交 mutation。
+  // 每当 store.state.count 变化的时候, 都会重新求取计算属性，并且触发更新相关联的 DOM。
+  // 通过在根实例中注册 store 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过 this.$store 访问到。
+  computed: {
+    count () {
+      return this.$store.state.count
+    },
+    ...mapGetters(['tenTimesCount'])
+  },
+  methods: {
+    increment () {
+      // 可以通过 store.state 来获取状态对象
+      console.log(this.$store.state.count)
+      // 通过 store.commit 方法触发状态变更
+      this.$store.commit('increment')
+    },
+    decrement () {
+      this.$store.commit('decrement')
     }
   },
   mounted () {
