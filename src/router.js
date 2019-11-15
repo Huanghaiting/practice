@@ -6,10 +6,15 @@ import SlotMain from './views/SlotMain'
 import transition from './views/transition'
 import author from './components/author'
 import email from './components/email'
+import test from './views/test'
 Vue.use(Router)
 
 export default new Router({
   routes: [{
+    path: '/test',
+    name: 'test',
+    component: test
+  }, {
     path: '/',
     name: 'home',
     component: Home

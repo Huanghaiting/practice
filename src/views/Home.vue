@@ -180,6 +180,7 @@ export default {
     ...mapGetters(['tenTimesCount'])
   },
   methods: {
+
     increment () {
       // 可以通过 store.state 来获取状态对象
       console.log(this.$store.state.count)
